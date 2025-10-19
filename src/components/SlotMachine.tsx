@@ -8,9 +8,11 @@ interface SlotMachineProps {
   onBandSelected: (band: Band) => void;
   isRunning: boolean;
   setIsRunning: (running: boolean) => void;
+  selectedBands: Band[];
+  maxSelections: number;
 }
 
-export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRunning }: SlotMachineProps) {
+export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRunning, selectedBands, maxSelections }: SlotMachineProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayBands, setDisplayBands] = useState<Band[]>(bands);
   const [selectedBandName, setSelectedBandName] = useState<string>('');
@@ -93,13 +95,15 @@ export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRun
         <div className="slot-highlight"></div>
       </div>
       
-      <button
-        onClick={startLottery}
-        disabled={isRunning || displayBands.length === 0}
-        className="lottery-btn"
-      >
-        {isRunning ? '抽選中...' : '抽選開始'}
-      </button>
+      {selectedBands.length < maxSelections && (
+        <button
+          onClick={startLottery}
+          disabled={isRunning || displayBands.length === 0}
+          className="lottery-btn"
+        >
+          {isRunning ? '抽選中...' : '抽選開始'}
+        </button>
+      )}
     </div>
   );
 }

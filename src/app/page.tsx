@@ -33,7 +33,19 @@ export default function Home() {
   }, []);
 
   const handleBandSelected = (selectedBand: Band) => {
-    setSelectedBands(prev => [...prev, selectedBand]);
+    const newSelectedBands = [...selectedBands, selectedBand];
+    setSelectedBands(newSelectedBands);
+    
+    // 7つ選出完了時のSP自動スクロール
+    if (newSelectedBands.length === maxSelections && window.innerWidth <= 768) {
+      setTimeout(() => {
+        const selectedSection = document.querySelector('.right-section');
+        if (selectedSection) {
+          selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 1500);
+    }
+    
     // バンドリストの更新を遅延させて、ルーレット表示を維持
     setTimeout(() => {
       setBands(prev => prev.filter(band => band.name !== selectedBand.name));
@@ -83,6 +95,8 @@ export default function Home() {
             onBandSelected={handleBandSelected}
             isRunning={isRunning}
             setIsRunning={setIsRunning}
+            selectedBands={selectedBands}
+            maxSelections={maxSelections}
           />
         </div>
         
@@ -114,7 +128,10 @@ export default function Home() {
               大塚 Deepa <a href="http://otsukadeepa.jp/" target="_blank" rel="noopener noreferrer">(公式サイト)</a>
             </div>
             <div className="info-item">
-              前売 ¥3,000 / 当日 ¥3,500<br />+1D(予定)
+              前売 ¥3,000 / 当日 ¥3,500(予定)<br />+1D
+            </div>
+            <div className="info-item">
+              配信 ¥2,000(予定)
             </div>
           </div>
           <div className="map-container desktop-map">
