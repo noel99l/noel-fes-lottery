@@ -50,7 +50,7 @@ body {
 }
 
 .header-left {
-  flex: 1;
+  flex: 0 0 auto;
 }
 
 .header-right {
@@ -59,7 +59,7 @@ body {
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 220px;
   height: auto;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
@@ -318,7 +318,7 @@ h1 {
   }
   
   .logo {
-    max-width: 120px;
+    max-width: 160px;
   }
   
   .event-volume {
