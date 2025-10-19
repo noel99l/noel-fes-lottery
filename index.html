@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>のえるフェスvol.5 バンド抽選</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>のえるフェスvol.6 バンド抽選</h1>
+        
+        <div class="lottery-section">
+            <div class="slot-machine">
+                <div class="slot" id="slot">
+                    <div class="slot-reel" id="slotReel"></div>
+                    <div class="slot-overlay"></div>
+                </div>
+            </div>
+            
+            <button id="startLottery" class="lottery-btn">抽選開始</button>
+            <button id="resetLottery" class="reset-btn" style="display: none;">リセット</button>
+        </div>
+        
+        <div class="results-section">
+            <h2>選出バンド</h2>
+            <div id="selectedBands" class="selected-bands"></div>
+            <div class="counter">
+                <span id="counter">0</span> / 7
+            </div>
+        </div>
+        
+        <div class="remaining-section">
+            <h3>残りバンド数: <span id="remainingCount">14</span></h3>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
