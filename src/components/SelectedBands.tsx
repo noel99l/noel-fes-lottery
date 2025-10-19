@@ -10,7 +10,6 @@ interface SelectedBandsProps {
 export default function SelectedBands({ selectedBands, maxSelections }: SelectedBandsProps) {
   return (
     <div className="results-section">
-      <h2>選出バンド</h2>
       <div className="selected-bands">
         {selectedBands.slice().reverse().map((band, index) => (
           <div key={`${band.name}-${selectedBands.length - index}`} className={`band-card ${index === 0 ? 'latest' : ''}`}>

@@ -62,13 +62,22 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="title-section">
-        <img src="/images/noel_fes_logo.png" alt="のえるフェス ロゴ" className="logo" />
-        <h1>バンド抽選</h1>
+      <div className="header-section">
+        <div className="header-left">
+          <img src="/images/noel_fes_logo.png" alt="のえるフェス ロゴ" className="logo" />
+        </div>
+        <div className="header-right">
+          <div className="event-info">
+            <p className="event-volume">vol.5</p>
+            <p className="event-date">2026/4/4(土)</p>
+            <p className="event-venue">大塚 Deepa</p>
+          </div>
+        </div>
       </div>
       
       <div className="main-layout">
         <div className="left-section">
+          <h1>出演バンド抽選</h1>
           <SlotMachine
             bands={bands}
             onBandSelected={handleBandSelected}
@@ -78,6 +87,7 @@ export default function Home() {
         </div>
         
         <div className="right-section">
+          <h1>選出バンド</h1>
           <SelectedBands
             selectedBands={selectedBands}
             maxSelections={maxSelections}
