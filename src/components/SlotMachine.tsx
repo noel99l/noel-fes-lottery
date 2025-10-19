@@ -82,7 +82,8 @@ export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRun
                 className={`slot-item ${isActive ? 'active' : ''}`}
                 style={{
                   transform: `translateY(${position * 100}px)`,
-                  opacity: Math.abs(position) <= 2 ? (isActive ? 1 : 0.6) : 0
+                  opacity: Math.abs(position) <= 2 ? (isActive ? 1 : 0.8) : 0,
+                  willChange: 'transform, opacity'
                 }}
               >
                 {band.name}

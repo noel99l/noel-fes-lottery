@@ -105,6 +105,10 @@ h1 {
   color: white;
   transition: all 0.3s ease-out;
   background: linear-gradient(45deg, #3498db, #2980b9);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .slot-item.active {
