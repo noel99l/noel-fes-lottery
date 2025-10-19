@@ -100,6 +100,47 @@ export default function Home() {
           )}
         </div>
       </div>
+      
+      <div className="event-details">
+        <div className="event-content">
+          <div className="event-info-detail">
+            <div className="info-item">
+              のえるフェスvol.5
+            </div>
+            <div className="info-item">
+              2026/4/4(土)<br />OPEN 14:00 / START 14:30
+            </div>
+            <div className="info-item">
+              大塚 Deepa <a href="http://otsukadeepa.jp/" target="_blank" rel="noopener noreferrer">(公式サイト)</a>
+            </div>
+            <div className="info-item">
+              前売 ¥3,000 / 当日 ¥3,500<br />+1D(予定)
+            </div>
+          </div>
+          <div className="map-container desktop-map">
+            <iframe
+              src="https://www.google.com/maps?q=大塚Deepa+東京都豊島区南大塚3-49-10&output=embed"
+              width="100%"
+              height="300"
+              style={{ border: 0, borderRadius: '12px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div className="map-container mobile-map">
+          <iframe
+            src="https://www.google.com/maps?q=大塚Deepa+東京都豊島区南大塚3-49-10&output=embed"
+            width="100%"
+            height="300"
+            style={{ border: 0, borderRadius: '12px' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </div>
   );
 }
