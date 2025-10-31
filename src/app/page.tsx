@@ -27,7 +27,7 @@ export default function Home() {
       { name: '伝説', concept: 'クリープハイプ', members: 'やまねこvo,gt みずいろgt てぃーけぇba しょうきdr' },
       { name: 'tabun(仮)', concept: 'tacicaのコピーバンド', members: 'Gt, Vo. みずいろ Ba. isuke Dr. ねこり' },
       { name: 'パーシモンサイダー(仮)', concept: 'サイダーガールのコピーをします！', members: 'Vo.アカネ Gtみつき Ba柿崎 Drポット (同期使用予定)' },
-      { name: 'ボカロバンド(仮)', concept: 'ボカロコピバン予定です！', members: 'ひのむ(Vo.)、のえる(Gt.)、幽助(Ba.)、ととまる(Dr.) Gt.2とKeyは未定' }
+      { name: 'ボカロバンド(仮)', concept: 'ボカロコピバン予定です！', members: 'ひのむ(Vo.)、のえる(Gt.)、森田氏(Gt.)、幽助(Ba.)、ととまる(Dr.) Gt.2とKeyは未定' }
     ];
     setBands(fallbackBands);
   }, []);
