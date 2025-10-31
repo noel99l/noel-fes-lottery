@@ -10,9 +10,10 @@ interface SlotMachineProps {
   setIsRunning: (running: boolean) => void;
   selectedBands: Band[];
   maxSelections: number;
+  forceWinner?: string;
 }
 
-export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRunning, selectedBands, maxSelections }: SlotMachineProps) {
+export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRunning, selectedBands, maxSelections, forceWinner }: SlotMachineProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayBands, setDisplayBands] = useState<Band[]>(bands);
   const [selectedBandName, setSelectedBandName] = useState<string>('');
@@ -35,8 +36,22 @@ export default function SlotMachine({ bands, onBandSelected, isRunning, setIsRun
     setDisplayBands(bands);
     setCurrentIndex(bands.length * 2);
     
-    const finalIndex = Math.floor(Math.random() * bands.length);
-    const selectedBand = bands[finalIndex];
+    let finalIndex: number;
+    let selectedBand: Band;
+    
+    if (forceWinner) {
+      const forcedBandIndex = bands.findIndex(band => band.name === forceWinner);
+      if (forcedBandIndex !== -1) {
+        finalIndex = forcedBandIndex;
+        selectedBand = bands[forcedBandIndex];
+      } else {
+        finalIndex = Math.floor(Math.random() * bands.length);
+        selectedBand = bands[finalIndex];
+      }
+    } else {
+      finalIndex = Math.floor(Math.random() * bands.length);
+      selectedBand = bands[finalIndex];
+    }
     const finalPosition = bands.length * 2 + finalIndex;
     
     const totalDistance = bands.length * 2 + finalIndex; // 2周 + 最終位置
